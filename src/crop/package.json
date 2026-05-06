@@ -1,12 +1,11 @@
 {
-  "name": "upload-lambda",
+  "name": "crop-lambda",
   "version": "1.0.0",
-  "description": "Recibe imagenes y las guarda en S3",
+  "description": "Recorta imagenes a 40x40 circular",
   "main": "index.js",
   "engines": { "node": ">=20" },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.600.0",
-    "busboy": "^1.6.0",
-    "uuid": "^9.0.1"
+    "jimp": "^0.22.12"
   }
 }
