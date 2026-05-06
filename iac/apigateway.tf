@@ -49,13 +49,13 @@ resource "aws_apigatewayv2_stage" "default" {
 
   access_log_settings {
     destination_arn = aws_cloudwatch_log_group.apigw.arn
-    
-    # Formato JSON simplificado, fácil de explicar si te preguntan
+
     format = jsonencode({
-      ip     = "$context.identity.sourceIp"
-      method = "$context.httpMethod"
-      path   = "$context.path"
-      status = "$context.status"
+      requestId = "$context.requestId"
+      ip        = "$context.identity.sourceIp"
+      method    = "$context.httpMethod"
+      path      = "$context.path"
+      status    = "$context.status"
     })
   }
 
