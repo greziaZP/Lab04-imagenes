@@ -2,7 +2,7 @@
 
 Descripción
 -----------
-Proyecto para desplegar una solución de procesamiento de imágenes en AWS (Lambdas, S3, SQS, VPC, CloudWatch, etc.). Se gestionan tres entornos independientes: `dev`, `qa` y `prod`. La infraestructura está definida con Terraform en el directorio `iac/` y las funciones Lambda en `src/crop` y `src/upload`.
+Proyecto para desplegar tres entornos independientes: `dev`, `qa` y `prod`. La infraestructura está definida con Terraform en el directorio `iac/` y las funciones Lambda en `src/crop` y `src/upload`.
 
 Requisitos
 ----------
@@ -49,12 +49,4 @@ Estructura del proyecto
 - `iac/` — Configuración Terraform (providers, recursos y módulos). Estado por workspace en `iac/terraform.tfstate.d/`.
 - `src/crop` — Lambda que procesa/croppea imágenes.
 - `src/upload` — Lambda que recibe y sube imágenes.
-- `diagram.mermaid` — (opcional) Diagrama de la arquitectura.
-
-Buenas prácticas
-----------------
-- Prueba cambios en `dev` antes de aplicarlos en `qa` o `prod`.
-- Mantén las credenciales con permisos mínimos necesarios.
-- Revisa las políticas IAM creadas por Terraform y ajústalas si son demasiado permisivas.
-
-¿Quieres que añada instrucciones para pruebas locales de las Lambdas (SAM/localstack) o que cree un archivo `make`/scripts para automatizar builds y despliegues?
+- `diagram.mermaid` —  Diagrama de la arquitectura.
