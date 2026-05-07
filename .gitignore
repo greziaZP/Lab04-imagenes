@@ -1,12 +1,20 @@
-# Local .terraform directories
-**/.terraform/*
+# Terraform
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfstate.d/
+*.tfplan
 
-# .tfstate files
-*.tfstate
-*.tfstate.*
+# Build
+.build/
 
-# Crash log files
-crash.log
+# Node
+src/upload/node_modules/
+src/crop/node_modules/
+src/upload/package-lock.json
+src/crop/package-lock.json
 
-# Ignore node_modules para las Lambdas
-node_modules/
+# OS
+.DS_Store
+Thumbs.db
